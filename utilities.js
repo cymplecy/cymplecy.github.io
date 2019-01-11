@@ -287,3 +287,4 @@ class Utilities {
 }
 
 Scratch.extensions.register(new Utilities());
+
