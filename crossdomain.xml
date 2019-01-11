@@ -2,4 +2,5 @@
   <site-control permitted-cross-domain-policies="master-only"/>
   <allow-access-from domain="scratchx.org" secure="false"/>
   <allow-access-from domain="cymplecy.github.io"/>
+  <allow-access-from domain="sheeptester.github.io"/>
 </cross-domain-policy>
