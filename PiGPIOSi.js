@@ -26,7 +26,19 @@ class PiGPIOSi {
               defaultValue: 'All Off'
             }
           }
-        }
+        },
+        {
+          opcode: 'sghBroadcast',
+          blockType: Scratch.BlockType.COMMAND,
+          
+          text: 'PiGPIOSi [URL]',
+          arguments: {
+            URL: {
+              type: Scratch.ArgumentType.STRING,
+              defaultValue: 'All Off'
+            }
+          }
+        },
       ]
     }
   }
@@ -77,6 +89,13 @@ class PiGPIOSi {
       .catch(err => resolve(''));
     });
   }
+  
+  sghBroadcast({URL}) {
+    new Promise(resolve => {
+      fetch('https://translate-service.scratch.mit.edu/translate?lang=fr&text=' + URL).then(res => res.text()).then(resolve)
+      .catch(err => resolve(''));
+    });
+  }  
 
   parseJSON({PATH, JSON_STRING}) {
     try {
