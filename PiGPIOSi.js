@@ -19,7 +19,7 @@ class PiGPIOSi {
 
           blockType: Scratch.BlockType.REPORTER,
 
-          text: 'get content from [URL]',
+          text: 'to ScratchGPIO [URL]',
           arguments: {
             URL: {
               type: Scratch.ArgumentType.STRING,
