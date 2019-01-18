@@ -15,27 +15,14 @@ class PiGPIOSi {
 
       blocks: [
         {
-          opcode: 'fetchFrom',
-
-          blockType: Scratch.BlockType.REPORTER,
-
+          opcode: 'sghBroadcast',
+          blockType: Scratch.BlockType.COMMAND,
+          
           text: 'to ScratchGPIO [URL]',
           arguments: {
             URL: {
               type: Scratch.ArgumentType.STRING,
-              defaultValue: 'All Off'
-            }
-          }
-        },
-        {
-          opcode: 'sghBroadcast',
-          blockType: Scratch.BlockType.COMMAND,
-          
-          text: 'PiGPIOSi [URL]',
-          arguments: {
-            URL: {
-              type: Scratch.ArgumentType.STRING,
-              defaultValue: 'All Off'
+              defaultValue: ''
             }
           }
         },
