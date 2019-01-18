@@ -23,7 +23,7 @@ class PiGPIOSi {
           arguments: {
             URL: {
               type: Scratch.ArgumentType.STRING,
-              defaultValue: 'https://translate-service.scratch.mit.edu/translate?language=fr&text=All Off'
+              defaultValue: 'All Off'
             }
           }
         }
@@ -73,7 +73,7 @@ class PiGPIOSi {
 
   fetchFrom({URL}) {
     return new Promise(resolve => {
-      fetch(URL).then(res => res.text()).then(resolve)
+      fetch('https://translate-service.scratch.mit.edu/translate?lang=fr&text=' + URL).then(res => res.text()).then(resolve)
       .catch(err => resolve(''));
     });
   }
