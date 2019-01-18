@@ -27,6 +27,34 @@ class PiGPIOSi {
           }
         },
         {
+          opcode: 'sghBroadcastMult',
+          blockType: Scratch.BlockType.COMMAND,
+          
+          text: 'PiGPIOSi broadcast [A] [B] [C] [D] [E]',
+          arguments: {
+            A: {
+              type: Scratch.ArgumentType.STRING,
+              defaultValue: ''
+            },
+            B: {
+              type: Scratch.ArgumentType.STRING,
+              defaultValue: ''
+            },
+            C: {
+              type: Scratch.ArgumentType.STRING,
+              defaultValue: ''
+            },
+            D: {
+              type: Scratch.ArgumentType.STRING,
+              defaultValue: ''
+            },
+            E: {
+              type: Scratch.ArgumentType.STRING,
+              defaultValue: ''
+            }            
+          }
+        },        
+        {
           opcode: 'sghSenderUpdate',
           blockType: Scratch.BlockType.COMMAND,
           
@@ -99,6 +127,13 @@ class PiGPIOSi {
       .catch(err => resolve(''));
     });
   }  
+  
+  sghBroadcastMult({A, B, C, D, E}) {
+    new Promise(resolve => {
+      fetch('https://translate-service.scratch.mit.edu/translate?lang=fr&text=' + A + B + C + D + E).then(res => res.text()).then(resolve)
+      .catch(err => resolve(''));
+    });
+  }   
   
   sghSenderUpdate({VARNAME, VARVALUE}) {
     new Promise(resolve => {
