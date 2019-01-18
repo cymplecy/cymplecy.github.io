@@ -18,7 +18,7 @@ class PiGPIOSi {
           opcode: 'sghBroadcast',
           blockType: Scratch.BlockType.COMMAND,
           
-          text: 'to ScratchGPIO [URL]',
+          text: 'PiGPIOSi broadcast [URL]',
           arguments: {
             URL: {
               type: Scratch.ArgumentType.STRING,
@@ -26,6 +26,22 @@ class PiGPIOSi {
             }
           }
         },
+        {
+          opcode: 'sghSenderUpdate',
+          blockType: Scratch.BlockType.COMMAND,
+          
+          text: 'PiGPIOSi: set [VARNAME] to [VARVALUE]',
+          arguments: {
+            VARNAME: {
+              type: Scratch.ArgumentType.STRING,
+              defaultValue: ''
+            },
+            VARVALUE: {
+              type: Scratch.ArgumentType.STRING,
+              defaultValue: ''
+            }            
+          }
+        }
       ]
     }
   }
@@ -83,6 +99,13 @@ class PiGPIOSi {
       .catch(err => resolve(''));
     });
   }  
+  
+  sghSenderUpdate({VARNAME, VARVALUE}) {
+    new Promise(resolve => {
+      fetch('https://translate-service.scratch.mit.edu/translate?lang=fr&text=' + VARNAME + '=' + VARVALUE).then(res => res.text()).then(resolve)
+      .catch(err => resolve(''));
+    });
+  }    
 
   parseJSON({PATH, JSON_STRING}) {
     try {
