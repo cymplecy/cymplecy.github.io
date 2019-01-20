@@ -2,7 +2,7 @@ const icon = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34
 //const JSONRPCWebSocket = require('../util/jsonrpc-web-socket');
 //const ScratchLinkWebSocket = 'ws://translate-service.scratch.mit.edu:8000/scratch/ble';
 
-class PiGPIOSi {
+class PiGPIOSiWS {
   constructor() {
     //this.ws = new WebSocket('ws://translate-service.scratch.mit.edu:8000/')
     //console.log(Scratch);
@@ -179,4 +179,4 @@ class PiGPIOSi {
 
 }
 
-Scratch.extensions.register(new PiGPIOSi());
+Scratch.extensions.register(new PiGPIOSiWS());
