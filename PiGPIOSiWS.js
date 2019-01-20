@@ -4,8 +4,8 @@ const icon = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34
 
 class PiGPIOSi {
   constructor() {
-    this.ws = new WebSocket('ws://translate-service.scratch.mit.edu:8000/')
-    console.log(Scratch);
+    //this.ws = new WebSocket('ws://translate-service.scratch.mit.edu:8000/')
+    //console.log(Scratch);
   }
 
   getInfo() {
