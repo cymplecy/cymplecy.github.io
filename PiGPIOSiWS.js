@@ -10,8 +10,8 @@ class PiGPIOSiWS {
 
   getInfo() {
     return {
-      id: 'pigpiosi',
-      name: 'PiGPIOSi',
+      id: 'pigpiosiws',
+      name: 'PiGPIOSiWS',
 
       colour: '#8BC34A',
       colourSecondary: '#7CB342',
