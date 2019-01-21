@@ -6,11 +6,11 @@ class PiGPIOSiWS {
   constructor() {
     this.ws = new WebSocket('wss://translate-service.scratch.mit.edu:8000/');
     //console.log(Scratch);
-    this.ws.onopen = function(evt) { onOpen(evt) };
+    this.ws.onopen = function(evt) { console.log('websocket opened') };
   }
-  function onOpen(evt) {
-    console.log('websocket opened');
-  }
+  //function onOpen(evt) {
+  //  console.log('websocket opened');
+  //}
 
   getInfo() {
     return {
