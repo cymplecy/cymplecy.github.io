@@ -8,7 +8,7 @@ class PiGPIOSiWS {
     //console.log(Scratch);
     this.ws.onopen = function(evt) { console.log('websocket opened') };
     this.message = 'pin11on';
-    this.ws.onmessage = function(evt) { this.ws.send(this.message); console.log('msg to sgh:' + this.message) };
+    this.ws.onmessage = function(evt) { this.ws.send(evt); console.log('msg to sgh:' + evt) };
       
   }
 
@@ -25,7 +25,7 @@ class PiGPIOSiWS {
 
       blocks: [
         {
-          opcode: 'sghBroadcast',
+          opcode: 'sghWSBroadcast',
           blockType: Scratch.BlockType.COMMAND,
           
           text: 'PiGPIOSi broadcast [BC]',
@@ -84,11 +84,8 @@ class PiGPIOSiWS {
     }
   }
 
-  sghBroadcast({BC}) {
-    new Promise(resolve => {
-      fetch('https://translate-service.scratch.mit.edu/translate?lang=fr&text=' + URL).then(res => res.text()).then(resolve)
-      .catch(err => resolve(''));
-    });
+  sghWSBroadcast({BC}) {
+    this.ws.send(BC);
   }  
   
   sghBroadcastMult({A, B, C, D, E}) {
