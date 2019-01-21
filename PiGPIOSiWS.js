@@ -7,7 +7,6 @@ class PiGPIOSiWS {
     this.ws = new WebSocket('wss://translate-service.scratch.mit.edu:8000/');
     //console.log(Scratch);
     this.ws.onopen = function(evt) { console.log('websocket opened') };
-    this.message = 'pin11on';
     this.ws.onmessage = function(evt) { this.ws.send(evt); console.log('msg to sgh:' + evt) };
       
   }
@@ -85,8 +84,8 @@ class PiGPIOSiWS {
   }
 
   sghWSBroadcast({BC}) {
-    this.ws.send(BC);
-    console.log('tried to send:' + BC);
+    this.ws.send('broadcast "' + BC + '"');
+    console.log('sent:' + BC);
   }  
   
   sghBroadcastMult({A, B, C, D, E}) {
