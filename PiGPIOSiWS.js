@@ -7,10 +7,10 @@ class PiGPIOSiWS {
     this.ws = new WebSocket('wss://translate-service.scratch.mit.edu:8000/');
     //console.log(Scratch);
     this.ws.onopen = function(evt) { console.log('websocket opened') };
+    this.message = 'pin11on';
+    this.ws.onmessage = function(evt) { this.ws.send(this.message); console.log('msg to sgh:' + this.message) };
+      
   }
-  //function onOpen(evt) {
-  //  console.log('websocket opened');
-  //}
 
   getInfo() {
     return {
