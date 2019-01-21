@@ -8,8 +8,7 @@ class PiGPIOSiWS {
     ws.onopen = function(evt) { onOpen(evt) }
   }
   function onOpen(evt) {
-      console.log('websocket opened')
-    }
+    console.log('websocket opened')
   }
 
   getInfo() {
