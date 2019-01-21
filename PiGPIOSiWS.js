@@ -86,6 +86,7 @@ class PiGPIOSiWS {
 
   sghWSBroadcast({BC}) {
     this.ws.send(BC);
+    console.log('tried to send:' + BC);
   }  
   
   sghBroadcastMult({A, B, C, D, E}) {
