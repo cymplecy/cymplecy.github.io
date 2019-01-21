@@ -8,7 +8,7 @@ class PiGPIOSiWS {
     //console.log(Scratch);
     this.ws.onopen = function(evt) { onOpen(evt) };
   }
-  onOpen(evt) {
+  function onOpen(evt) {
     console.log('websocket opened');
   }
 
