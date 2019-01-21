@@ -5,6 +5,7 @@ const icon = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34
 class PiGPIOSiWS {
   constructor() {
     this.ws = new WebSocket('wss://translate-service.scratch.mit.edu:8000/');
+    console.log(Scratch);
     this.ws.onopen = function(evt) { onOpen(evt) };
   }
   function onOpen(evt) {
