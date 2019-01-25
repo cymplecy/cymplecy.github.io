@@ -2,6 +2,7 @@ const icon = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34
 //const JSONRPCWebSocket = require('../util/jsonrpc-web-socket');
 //const ScratchLinkWebSocket = 'ws://translate-service.scratch.mit.edu:8000/scratch/ble';
 var SensorDict = {}
+var sensorSplit
 class PiGPIOSiWS {
   constructor() {
     this.ws = new WebSocket('wss:localhost:8000/');
