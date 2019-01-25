@@ -31,7 +31,7 @@ class PiGPIOSiWS {
           arguments: {
             BC: {
               type: Scratch.ArgumentType.STRING,
-              defaultValue: 'config5in
+              defaultValue: 'config5in'
             }
           }
         },
