@@ -2,7 +2,7 @@ const icon = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34
 //const JSONRPCWebSocket = require('../util/jsonrpc-web-socket');
 //const ScratchLinkWebSocket = 'ws://translate-service.scratch.mit.edu:8000/scratch/ble';
 //var SensorDict = {}
-//var sensorSplit
+var sensorSplit
 class PiGPIOSiWS {
   constructor() {
     this.ws = new WebSocket('wss:localhost:8000/');
@@ -12,7 +12,8 @@ class PiGPIOSiWS {
       var data = evt.data
       console.log('msg from sgh:' + data)
       var sensorSplit = data.split(":");
-      //sensorDict[sensorSplit[0]] = sensorSplit[1];
+      sensorDict[sensorSplit[0]] = sensorSplit[1];
+      console.log("sensorDict:" + sensorDict);
     }
   }
 
