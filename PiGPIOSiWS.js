@@ -2,15 +2,15 @@ const icon = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34
 //const JSONRPCWebSocket = require('../util/jsonrpc-web-socket');
 //const ScratchLinkWebSocket = 'ws://translate-service.scratch.mit.edu:8000/scratch/ble';
 var sensorDict = {}
-  var myVar = setInterval(myTimer, 1000);
+var myVar = setInterval(myTimer, 1000);
 
-  function myTimer() {
-    this.ws.send('refresh');
-    console.log("refresh sent");
-  }
+function myTimer() {
+  //this.ws.send('refresh');
+  console.log("refresh sent");
+}
 
 class PiGPIOSiWS {
-
+  var swVar
 
   constructor() {
     this.ws = new WebSocket('wss:localhost:8000/');
@@ -46,7 +46,7 @@ class PiGPIOSiWS {
           arguments: {
             BC: {
               type: Scratch.ArgumentType.STRING,
-              defaultValue: 'config5in'
+              defaultValue: 'config22in'
             }
           }
         },
