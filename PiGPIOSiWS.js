@@ -83,6 +83,17 @@ class PiGPIOSiWS {
               type: Scratch.ArgumentType.STRING,
               defaultValue: ''
             }            
+          }        
+        },
+        {
+          opcode: 'sghGetSensor',
+          blockType: Scratch.BlockType.REPORTER,
+          text: 'PiGPIOSi: get [VARNAME]',
+          arguments: {
+            VARNAME: {
+              type: Scratch.ArgumentType.STRING,
+              defaultValue: ''
+            }          
           }
         }
       ]
@@ -105,6 +116,9 @@ class PiGPIOSiWS {
       .catch(err => resolve(''));
     });
   }    
+  sghGetSensor({VARNAME}) {
+    return sensorDict[VARNAME.toLowerCase()];
+  }  
 
 }
 
