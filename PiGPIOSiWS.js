@@ -14,7 +14,8 @@ class PiGPIOSiWS {
       var sensorSplit = data.split(":");
       sensorDict[sensorSplit[0]] = sensorSplit[1];
       console.log("sensorDict:" + sensorDict);
-    }
+    };
+    setInterval(function(){ console.log("HELLO"); }, 1000);
   }
 
   getInfo() {
