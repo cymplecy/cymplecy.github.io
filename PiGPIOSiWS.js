@@ -7,8 +7,8 @@ class PiGPIOSiWS {
     this.ws = new WebSocket('wss://translate-service.scratch.mit.edu:8000/');
     //console.log(Scratch);
     this.ws.onopen = function(evt) { console.log('websocket opened') };
-    this.ws.onmessage = function(evt) { this.ws.send(evt); console.log('msg to sgh:' + evt) };
-      
+    //this.ws.onmessage = function(evt) { this.ws.send(evt); console.log('msg to sgh:' + evt) };
+    this.ws.onmessage = function(evt) { console.log('rcvd from wss handler:' + evt) };
   }
 
   getInfo() {
