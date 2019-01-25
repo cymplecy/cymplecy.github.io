@@ -3,7 +3,15 @@ const icon = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34
 //const ScratchLinkWebSocket = 'ws://translate-service.scratch.mit.edu:8000/scratch/ble';
 var sensorDict = {}
 
+
 class PiGPIOSiWS {
+  var myVar = setInterval(myTimer, 1000);
+
+  function myTimer() {
+    this.ws.send('refresh');
+    console.log("refresh sent");
+  }
+
   constructor() {
     this.ws = new WebSocket('wss:localhost:8000/');
     //console.log(Scratch);
@@ -17,11 +25,6 @@ class PiGPIOSiWS {
     };
 
   }
-  
-  setInterval(function(){
-  this.ws.send('refresh');
-  console.log("refresh sent");
-  }, 1000);
 
   getInfo() {
     return {
