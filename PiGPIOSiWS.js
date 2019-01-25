@@ -89,10 +89,8 @@ class PiGPIOSiWS {
   }  
   
   sghBroadcastMult({A, B, C, D, E}) {
-    new Promise(resolve => {
-      fetch('https://translate-service.scratch.mit.edu/translate?lang=fr&text=' + A + B + C + D + E).then(res => res.text()).then(resolve)
-      .catch(err => resolve(''));
-    });
+    this.ws.send('broadcast "' + A + B + C + D + E + '"');
+    console.log('sent:'  + A + B + C + D + E);
   }   
   
   sghSenderUpdate({VARNAME, VARVALUE}) {
