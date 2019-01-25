@@ -16,7 +16,7 @@ class PiGPIOSiWS {
       console.log("sensorDict:" + sensorDict);
     };
     setInterval(function(){
-      this.ws.send('refresh');
+      ws.send('refresh');
       console.log("refresh sent");
       }, 1000);
   }
