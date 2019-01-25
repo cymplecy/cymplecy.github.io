@@ -3,6 +3,10 @@ const icon = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34
 //const ScratchLinkWebSocket = 'ws://translate-service.scratch.mit.edu:8000/scratch/ble';
 var sensorDict = {}
 
+function swRefresh() {
+  console.log("swrefresh sent"); 
+}
+
 class PiGPIOSiWS {
   
 
