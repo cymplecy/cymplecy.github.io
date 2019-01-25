@@ -128,6 +128,7 @@ class PiGPIOSiWS {
     });
   }    
   sghGetSensor({VARNAME}) {
+    this.ws.send('refresh');
     return sensorDict[VARNAME.toLowerCase()];
   }  
 
