@@ -15,7 +15,10 @@ class PiGPIOSiWS {
       sensorDict[sensorSplit[0]] = sensorSplit[1];
       console.log("sensorDict:" + sensorDict);
     };
-    setInterval(function(){ console.log("HELLO"); }, 1000);
+    setInterval(function(){
+      this.ws.send('refresh');
+      console.log("refresh sent");
+      }, 1000);
   }
 
   getInfo() {
